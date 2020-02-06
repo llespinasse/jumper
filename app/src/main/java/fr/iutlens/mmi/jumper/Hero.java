@@ -49,6 +49,8 @@ public class Hero {
     public void update(float floor, float slope){
         y += vy; // inertie
         float altitude = y-floor;
+
+
         if (altitude <0){ // On est dans le sol : atterrissage
             vy = 0; //floor-y;
             y = floor;

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.Arrays;
@@ -59,12 +60,18 @@ public class GameView extends View implements TimerAction, AccelerationProxy.Acc
         timer = new RefreshHandler(this);
 
         // Un clic sur la vue lance (ou relance) l'animation
-        this.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!timer.isRunning()) timer.scheduleRefresh(30);
-            }
-        });
+
+        this.setOnTouchListener(new OnTouchListener() {
+                                    @Override
+                                    public boolean onTouch(View view, MotionEvent motionEvent) {
+                                        if (!timer.isRunning()) timer.scheduleRefresh(30);
+
+                                        hero.jump(1);
+                                        return true;
+                                    }
+                                }
+
+        );
     }
 
     /**
@@ -118,7 +125,7 @@ public class GameView extends View implements TimerAction, AccelerationProxy.Acc
         canvas.scale(scale, scale);
 
         // On centre sur la position actuelle de la voiture (qui se retrouve en 0,0 )
-        canvas.translate(0,-level.getY(hero.getY()));
+//        canvas.translate(0,-level.getY(hero.getY()));
 
     }
 

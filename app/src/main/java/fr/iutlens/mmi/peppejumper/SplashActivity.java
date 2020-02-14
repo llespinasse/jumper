@@ -1,4 +1,4 @@
-package fr.iutlens.mmi.jumper;
+package fr.iutlens.mmi.peppejumper;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

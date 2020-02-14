@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "fr.iutlens.mmi.jumper"
+        applicationId "fr.iutlens.mmi.peppejumper"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

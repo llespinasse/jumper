@@ -1,9 +1,9 @@
-package fr.iutlens.mmi.jumper;
+package fr.iutlens.mmi.peppejumper;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import fr.iutlens.mmi.jumper.utils.AccelerationProxy;
+import fr.iutlens.mmi.peppejumper.utils.AccelerationProxy;
 
 /***
  * Crédits image : https://pixabay.com/fr/lapin-dessin-animé-jeu-élément-1582176/

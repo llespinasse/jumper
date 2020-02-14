@@ -1,4 +1,4 @@
-package fr.iutlens.mmi.jumper;
+package fr.iutlens.mmi.peppejumper;
 
 import org.junit.Test;
 

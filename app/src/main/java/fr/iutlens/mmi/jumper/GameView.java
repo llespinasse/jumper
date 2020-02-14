@@ -1,7 +1,9 @@
 package fr.iutlens.mmi.jumper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
+import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -80,7 +82,11 @@ public class GameView extends View implements TimerAction, AccelerationProxy.Acc
     @Override
     public void update() {
         if (this.isShown()) { // Si la vue est visible
-            timer.scheduleRefresh(30); // programme le prochain rafraichissement
+            if (hero.vie <=0){
+                Intent intent = new Intent(getContext(),SplashActivity.class);
+                getContext().startActivity(intent);
+                ((AppCompatActivity )getContext()).finish();
+            } else timer.scheduleRefresh(30); // programme le prochain rafraichissement
             current_pos += SPEED;
             if (current_pos>level.getLength()) current_pos = 0;
             hero.update(level.getFloor(current_pos+1),level.getSlope(current_pos+1));
@@ -97,7 +103,7 @@ public class GameView extends View implements TimerAction, AccelerationProxy.Acc
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         // On met une couleur de fond
-        canvas.drawColor(0xff000000);
+        canvas.drawColor(0xFFFFE7AB);
 
         // On choisit la transformation à appliquer à la vue i.e. la position
         // de la "camera"

@@ -16,5 +16,12 @@ public class SplashActivity extends AppCompatActivity {
     public void startGame(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
+    }
+
+    public void quitGame(View view) {
+        finish();
+//        System.exit(0);
     }
 }
+4

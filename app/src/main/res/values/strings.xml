@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">jumper</string>
-    <string name="play_btn">Jouer !</string>
+    <string name="app_name">Peppe Jumper</string>
+    <string name="play_btn">Jouer</string>
+    <string name="quit_btn">Quitter</string>
 </resources>

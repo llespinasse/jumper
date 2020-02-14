@@ -11,6 +11,7 @@ import fr.iutlens.mmi.jumper.utils.SpriteSheet;
 public class Hero {
 
     public static final int SAME_FRAME = 3;
+    private static final float OFFSET = -1;
     private final float BASELINE = 0.93f;
 
 
@@ -28,7 +29,7 @@ public class Hero {
 
     private int frame;
     private int cpt;
-
+    public int vie;
 
 
     public Hero(int sprite_id, float vx){
@@ -38,6 +39,7 @@ public class Hero {
         jump = 0;
         frame =0;
         cpt = 0;
+        vie = 1;
         this.vx = vx;
     }
 
@@ -50,12 +52,16 @@ public class Hero {
         y += vy; // inertie
         float altitude = y-floor;
 
-
+        if(altitude < OFFSET) {
+            // si joueur trop en dessous du niveau du sol = -1 vie ou stop jeu
+          vie--;
+        }
         if (altitude <0){ // On est dans le sol : atterrissage
             vy = 0; //floor-y;
             y = floor;
             altitude = 0;
         }
+
         if (altitude == 0){ // en contact avec le sol
             if (jump != 0) {
                 vy = jump*IMPULSE*vx; // On saute ?

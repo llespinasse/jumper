@@ -24,4 +24,3 @@ public class SplashActivity extends AppCompatActivity {
 //        System.exit(0);
     }
 }
-4
